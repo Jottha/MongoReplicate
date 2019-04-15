@@ -5,6 +5,6 @@ WORKDIR /usr/src/configs
 
 # Install app dependencies
 COPY replicaSet.js .
-COPY setup.sh
+COPY setup.sh .
 
 CMD ["./setup.sh"]
