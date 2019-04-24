@@ -44,11 +44,8 @@ services:
         build: ./arbiter-ab0-1
         ports:
           - "30000:30000"
-    
-    setup-ab:
-      image: "setup-rs"
-      build: ./setup
-      depends_on:
-        - "arbiter-ab0-1"
+
+    depends_on:
+      - "setup-rs"
 
     
