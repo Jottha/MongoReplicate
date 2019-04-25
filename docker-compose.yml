@@ -32,18 +32,20 @@ services:
       build: ./setup
       depends_on:
         - "mongo-rs0-1"
-        - "arbiter-ab0-1"
 
     adminmongo:
       image: "mrvautin/adminmongo"
       ports:
         - "1234:1234"
         
-services:
     arbiter-ab0-1:
         image: "mongo-start"
         build: ./arbiter-ab0-1
         ports:
           - "30000:30000"
+
+        depends_on:
+            - "mongo-rs0-1"
+            - "arbiter-ab0-1"
 
     
