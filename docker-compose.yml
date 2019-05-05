@@ -15,7 +15,7 @@ services:
         restart_policy:
           condition: on-failure
     portainer:
-      image: "portainer"
+      image: "portainer/portainer"
       build: ./portainer
       ports:
         - "9000:9000"

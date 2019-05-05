@@ -1,4 +1,4 @@
-FROM portainer
+FROM portainer/portainer
 MAINTAINER Jailton Ventura <jottha_2006@hotmail.com>
 
 EXPOSE 9000
