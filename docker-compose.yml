@@ -2,11 +2,11 @@ version: '3'
 services:
     mongo:
       image: "mongo-start"
-      build: ./mongo-rs0-1
+      build: ./mongo
       ports:
         - "27017:27017"
       volumes:
-        - ./mongo-rs0-1/data:/data/db
+        - ./mongo/data:/data/db
       deploy:
         replicas: 1
         update_config:
@@ -27,15 +27,15 @@ services:
       image: "setup-rs"
       build: ./setup
       depends_on:
-        - "mongo-rs0-1"
+        - "mongo"
 
     adminmongo:
       image: "mrvautin/adminmongo"
       ports:
         - "1234:1234"
 
-    arbiter-ab0-1:
+    arbiter:
         image: "mongo-start"
-        build: ./arbiter-ab0-1
+        build: ./arbiter
         ports:
           - "30000:30000"  
