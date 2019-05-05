@@ -1,4 +1,5 @@
 FROM mongo
+MAINTAINER Jailton Ventura <jottha_2006@hotmail.com>
 
 # Workdir configs directory
 WORKDIR /usr/src/configs
