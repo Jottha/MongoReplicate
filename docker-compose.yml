@@ -14,20 +14,3 @@ services:
           delay: 10s
         restart_policy:
           condition: on-failure
-          
-    setup-rs:
-      image: "setup-rs"
-      build: ./setup
-      depends_on:
-        - "mongo"
-
-    adminmongo:
-      image: "mrvautin/adminmongo"
-      ports:
-        - "1234:1234"
-
-    arbiter:
-      image: "mongo-start"
-      build: ./arbiter
-      ports:
-        - "30000:30000" 
