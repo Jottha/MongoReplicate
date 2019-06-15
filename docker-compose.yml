@@ -8,10 +8,10 @@ services:
       volumes:
         - ./mongo-rs0-1/data:/data/db
       deploy:
-        replicas: 3
+        replicas: 1
         update_config:
           parallelism: 2
-          delay: 10s
+          delay: 15s
         restart_policy:
           condition: on-failure
       depends_on:
@@ -38,7 +38,7 @@ services:
       image: "setup-rs"
       build: ./setup
       depends_on:
-        - "mongo"
+        - "mongo-rs0-1"
 
     adminmongo:
       image: "mrvautin/adminmongo"
